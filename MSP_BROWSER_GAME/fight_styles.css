@@ -1,0 +1,66 @@
+/*body{
+   background-image: url("background_images/paper_backgr1.gif");
+   
+ }*/
+
+#topRow {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: flex-start;
+   border: 1px solid;
+}
+
+#paper1{
+   border: 1px solid;
+}
+
+#paper1 img {
+   height: 200px;
+   border: 1px solid;
+}
+
+#rock1{
+   border: 1px solid;
+}
+
+#rock1 img {
+   height: 200px;
+  border: 1px solid;
+}
+
+.char{
+   margin: 250px 20px;
+ 
+   
+}
+
+#bottomRow {
+   padding:20px;
+   font: 20pt Arial;
+}
+
+.stats {
+   
+   width: 50px;
+   height:400px
+}
+
+.healthBar{
+   font:18pt Arial;
+   font-weight:bold;
+   margin-top: 40px;
+}
+
+.hpBorder{
+   width: 350px;
+   height: 30px;
+   border:5px solid;
+   border-color: black;
+}
+
+.bar{
+   width: 350px;
+   height:30px;
+   background-color: green;
+}

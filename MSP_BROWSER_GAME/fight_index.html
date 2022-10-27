@@ -6,50 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPS FIGHT CLUB</title>
     <link rel="stylesheet" href="fight_styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
+<body>
+  <div>
+<div id="music">
+  <img src="images/sound_on.png" onclick="mute()";>
+</div>
+<audio id="sound">
+<source  src="music/510953__theoter__cinematic-battle-song.mp3" type="audio/mpeg">
+  Your browser does not support audio.
+</audio>
+</div>
 <!--fight scene -->
 
-<body>
+
+
 <!--fighters container-->
-    <div id="container">
-    <div id="topRow">
+<div id="container">
+                                 <div id="topRow">
 
-<!--fighter 1-->     
-    <div id="paper1" class ="char">
-         <img src="images/paper/among_us_paper.png">
-    </div>
+<!-----------------fighter 1----------------->     
+   
     <!--fighter one health bar-->
-    <div id="paperStat" class="stats"></div>
-     <span class="healthBar"> HP</span><br>
+    <div id="paperStat" class="stats">
+     <span class="hP1"> HP</span><br>
      <div class="hpBorder">
-     <div id="paperHP" class="bar"></div> 
+     <div id="paperHP" class="bar"> SUPER PAPER</div> 
     </div>
-<!--fighting moves-->
-<span class="healthBar">MOVES</span>
-<button>PUNCH</button>
-<button>KICK</button>
-<button>SPECIAL MOVE</button>
-
-<!--fighter 2 -->
-    <div id="rock1" class="char">
-        <img src="images/rock/ROCK.png">
     </div>
-    <div id="rockStat" class="stats"></div>
-    <span class="healthBar"> HP</span><br>
-    <div class="hpBorder">
-    <div id="rockrHP" class="bar"></div> 
+    <!--fighter 1 image-->
+    <div id="paper1" class ="char">
+        <img src="images/paper/super paper.gif">
    </div>
+<!--fighting moves-->
+  <div class="moves" alt="MOVES">
+    <button id="punch" onclick="punch()">PUNCH</button>
+    <button id="kick" onclick="kick()">KICK</button>
+    <button id="spMove" onclick="spMove()">SPECIAL MOVE</button>
+  </div>
+
+
+<!--timer-->
+<h2 id="h2">00:00</h2>
+
+<!----------------- FIGHTER 2 -------------->
+    <div id="rockStat" class="stats">
+     <span class="hP"> HP</span><br>
+    <div class="hpBorder">
+    <div id="rockHP" class="bar"> THE ROCK </div> 
+   </div>
+   </div>
+   <!--fighter 2 image-->
+   <div id="rock1" class="char">
+    <img src="images/rock/Rock-default.webp">
  </div>
+   <!--fighting moves 2-->
 
-        <a href="start_game.html"> <button>Home</button></a><!--link to start screen-->
-    <div id=" bottomRow"></div>
+   <div class="moves" alt="MOVES">
+    <button id="punch" onclick="punch1()">PUNCH</button>
+    <button id="kick" onclick="kick1()">KICK</button>
+    <button id="spMove" onclick="spMove1()">SPECIAL MOVE</button>
     </div>
-      
-<!--fighters dialog-->
-    <h1> ROCK! PAPER! SCISSOR! SAYS.... FIGHT!</h1>
-<p> Toilet Papa     VS       Ragna Rock</p>
+    
+    </div>
+</div>
 
+
+    <div class="bottomRow">
+      <p id="p"> ROCK! PAPER! SCISSOR! SAYS.... FIGHT!<br></p>
+        <button id="homeButton" href="start_game.html">Home</button></a><!--link to start screen-->
+               <button id="fightButton" onclick="fightButton()"> FIGHT </button>
+        
+ 
+
+                                                </div> 
+
+
+
+ <!--fighters dialog-->
+
+
+
+
+    
     <script src="script.js"></script> 
 </body>
 </html>

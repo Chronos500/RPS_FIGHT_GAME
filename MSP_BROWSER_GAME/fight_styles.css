@@ -1,66 +1,198 @@
-/*body{
-   background-image: url("background_images/paper_backgr1.gif");
-   
- }*/
+body{
+   background-color: darkgray;
+}
+
 
 #topRow {
-   display: flex;
+   display:flex;
    flex-direction: row;
-   justify-content: center;
-   align-items: flex-start;
-   border: 1px solid;
+   border: 3px solid;
+   background-image: url("background_images/grass_sky_background.jpeg");
+   background-repeat: no-repeat;
+   background-size: 100%;
+   position: fixed;
+   width: 124%;
+   height: 65%;
+   left: 0;
+   top: 0;
+   z-index: -2;
 }
 
 #paper1{
-   border: 1px solid;
+   height: 200px;
+   width: 200px;
+   margin-top: 550px;
 }
 
 #paper1 img {
-   height: 200px;
-   border: 1px solid;
+   height: 400px;;
+   transform: scaleX(-1);
 }
 
 #rock1{
-   border: 1px solid;
+   height: 400px;
+   width: 200px;
+   margin-top: 450px;
 }
 
 #rock1 img {
-   height: 200px;
-  border: 1px solid;
-}
-
-.char{
-   margin: 250px 20px;
+  height: 550px;
+margin-bottom: 500px;
+margin-left: 500px;
  
+}
+#rockHP{
+   background-color: aqua;
+   margin:20px 2px;
    
+  
 }
 
-#bottomRow {
+#paperHP{
+   background-color: orange;
+}
+
+.moves{
+   margin-right: 400px;
+   width: 100%;
+   height: 50%;
+}
+
+
+.bottomRow{
    padding:20px;
+   color: black;
    font: 20pt Arial;
-}
-
-.stats {
+   border: 1px solid;
+   border-color : rgb(22, 219, 48);
+   margin-top: 1200px;
+   height: 700px;
+   background-image: url("background_images/Dialog Box.png");
+   background-repeat: no-repeat;
+   background-size: 101% 98%;
+   background-position: center;
+   margin-top: 64vh;
+   padding-top: 4px;
    
-   width: 50px;
-   height:400px
 }
 
-.healthBar{
+.stats{
+   left: 300;
+   width: 3px;
+   border: 1px solid;
+   border-color : blue;
+   height: 1px;
+}
+
+.moves button{
+  background-color: black;
+  border: 3px solid;
+  border-color : black;
+  font: 25pt Arial;
+  border-radius: 5px;
+  color: white;
+  margin-top: 90px ;
+}
+
+.bottomRow button{
+   font: 24pt Arial;
+   border-radius: 5px;
+   margin: 500px 350px;
+   position:sticky;
+   z-index: 3;
+   width: 150px;
+   background-color: black;
+   color: white;
+   border: 3px solid;
+   border-color : red;
+}
+
+#punch{
+background-color: blue;
+font-weight: bold;
+color:black
+}
+#kick{
+background-color: yellow;
+color:black;
+font-weight: bold;
+}
+#spMove{
+   background-color: green;
+}
+
+#punch:hover{
+   background-color: red;
+   font-weight: bold;
+   color:black
+   }
+   #kick:hover{
+   background-color: red;
+   color:black;
+   font-weight: bold;
+   }
+   #spMove:hover{
+      background-color: red;
+   }
+#music{
+   position:absolute;
+   top: 90vh;
+   left:80vh;
+   z-index: 3;
+}
+
+#music img{
+   height:80px;
+}
+
+
+button:hover{
+   background-color: red;
+}
+
+.hP{
+   color: white;
+   background-color: blue;
    font:18pt Arial;
    font-weight:bold;
-   margin-top: 40px;
+   margin-top: 800px;
+   border: 2px solid;
+   border-color : red;
+   margin:20px 250px;
 }
 
-.hpBorder{
-   width: 350px;
-   height: 30px;
-   border:5px solid;
-   border-color: black;
+.hP1{
+   color: white;
+   background-color: blue;
+   font:18pt Arial;
+   font-weight:bold;
+   margin-top: 800px;
+   border: 2px solid;
+   border-color : red;
 }
 
 .bar{
-   width: 350px;
+   font-weight: bold;
+   font-size: larger;
+   left:300;
+   width: 650px;
    height:30px;
    background-color: green;
+   border: 4px solid black;
+   margin-top:20px;
+}
+
+p{
+   font-family: 'Chakra Petch', sans-serif;
+   font-weight: 700;
+   font-size: 40px;
+   z-index: -5;
+  margin:100px 50px;
+ 
+}
+
+h2{
+   font-size: 50px;
+   margin-right: 90px;
+
 }

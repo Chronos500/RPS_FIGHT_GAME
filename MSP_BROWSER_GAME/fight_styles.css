@@ -9,7 +9,7 @@ body{
    border: 3px solid;
    background-image: url("background_images/grass_sky_background.jpeg");
    background-repeat: no-repeat;
-   background-size: 100%;
+   background-size: 110vh;
    position: fixed;
    width: 124%;
    height: 65%;
@@ -26,19 +26,19 @@ body{
 
 #paper1 img {
    height: 400px;;
-   transform: scaleX(-1);
+   
 }
 
 #rock1{
    height: 400px;
    width: 200px;
    margin-top: 450px;
+   transform: scaleX(-1);
 }
 
 #rock1 img {
   height: 550px;
 margin-bottom: 500px;
-margin-left: 500px;
  
 }
 #rockHP{
@@ -182,7 +182,7 @@ button:hover{
    margin-top:20px;
 }
 
-p{
+#p{
    font-family: 'Chakra Petch', sans-serif;
    font-weight: 700;
    font-size: 40px;
@@ -196,3 +196,4 @@ h2{
    margin-right: 90px;
 
 }
+

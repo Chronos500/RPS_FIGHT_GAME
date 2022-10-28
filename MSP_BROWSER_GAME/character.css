@@ -1,0 +1,10 @@
+h2{
+    color: rgb(233, 63, 6);
+    padding-left:800px;
+    background-color: black;
+}
+
+.col-4{
+    border:solid 10px red;
+    background-color: black;
+}

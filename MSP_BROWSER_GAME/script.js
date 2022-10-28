@@ -205,3 +205,28 @@ function spMove1() {
 
 
 
+/*character selection options*/
+
+function hinata(){
+    document.getElementsByClassName("row").style.backgroundImage = url("images/hinata.PNG");
+}
+
+function sasuke(){
+    document.getElementsByClassName("row").style.backgroundImage = url("images/sasuke.PNG");
+}
+
+function sakura(){
+    document.getElementsByClassName("row").style.backgroundImage = url("images/sakura.PNG");
+}
+
+function kakashi(){
+    document.getElementsByClassName("row").style.backgroundImage = url("images/kakashi.PNG");
+}
+
+function naruto(){
+    document.getElementsByClassName("row").style.backgroundImage = url("images/naruto.PNG");
+}
+
+function rockLee(){
+    document.getElementsByClassName("row").style.backgroundImage = url("images/rocklee.PNG");
+}

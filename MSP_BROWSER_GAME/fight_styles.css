@@ -6,33 +6,46 @@ body{
 #topRow {
    display:flex;
    flex-direction: row;
-   border: 3px solid;
-   background-image: url("background_images/grass_sky_background.jpeg");
+   border: 3px solid red;
+   background-image: url("background_images/IMG_4025.JPG");
    background-repeat: no-repeat;
-   background-size: 110vh;
+   background-size: 110vh 70vh;
+   background-position: center;
    position: fixed;
-   width: 124%;
-   height: 65%;
    left: 0;
    top: 0;
    z-index: -2;
 }
 
+.bottomRow{
+   padding:20px;
+   color: black;
+   font: 20pt Arial;
+   border: 1px solid;
+   border-color : rgb(22, 219, 48);
+   margin-top: 100vh;
+   height: 700px;
+   background-image: url("background_images/Dialog Box.png");
+   background-repeat: no-repeat;
+   background-size: 101% 98%;
+   background-position: center;
+   margin-top: 64vh;
+   padding-top: 4px;
+   
+}
+
 #paper1{
-   height: 200px;
-   width: 200px;
+  
    margin-top: 550px;
 }
 
 #paper1 img {
-   height: 400px;;
+   height: 800px;;
    
 }
 
 #rock1{
-   height: 400px;
-   width: 200px;
-   margin-top: 450px;
+   margin-top: 710px;
    transform: scaleX(-1);
 }
 
@@ -59,22 +72,6 @@ margin-bottom: 500px;
 }
 
 
-.bottomRow{
-   padding:20px;
-   color: black;
-   font: 20pt Arial;
-   border: 1px solid;
-   border-color : rgb(22, 219, 48);
-   margin-top: 1200px;
-   height: 700px;
-   background-image: url("background_images/Dialog Box.png");
-   background-repeat: no-repeat;
-   background-size: 101% 98%;
-   background-position: center;
-   margin-top: 64vh;
-   padding-top: 4px;
-   
-}
 
 .stats{
    left: 300;

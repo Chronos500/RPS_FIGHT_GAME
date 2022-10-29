@@ -4,17 +4,18 @@ body{
 
 
 #topRow {
-   display:flex;
-   flex-direction: row;
+
    border: 3px solid red;
-   background-image: url("background_images/IMG_4025.JPG");
+   /*background-image: url("background_images/IMG_4025.JPG");*/
    background-repeat: no-repeat;
-   background-size: 110vh 70vh;
-   background-position: center;
+   background-size: 110% 100%;
    position: fixed;
    left: 0;
    top: 0;
    z-index: -2;
+   height:70%;
+   width: 100%;
+
 }
 
 .bottomRow{
@@ -29,57 +30,73 @@ body{
    background-repeat: no-repeat;
    background-size: 101% 98%;
    background-position: center;
-   margin-top: 64vh;
+   margin-top: 68vh;
    padding-top: 4px;
    
 }
 
 #paper1{
   
-   margin-top: 550px;
-}
-
-#paper1 img {
-   height: 800px;;
+   margin: 5px;
+   padding:0px;
    
 }
 
+#paper1 img {
+   height: 800px;
+   margin-top: 30vh;
+   margin-left: 25%;
+}
+
 #rock1{
-   margin-top: 710px;
+   margin-top: 70%;
    transform: scaleX(-1);
 }
 
 #rock1 img {
   height: 550px;
-margin-bottom: 500px;
+  margin-top: 30vh;
+  margin-left: 25%;
  
 }
 #rockHP{
    background-color: aqua;
-   margin:20px 2px;
-   
+   margin:2px 2px;
+   border:5px green solid
   
 }
 
 #paperHP{
    background-color: orange;
+   margin-bottom:1px;
 }
 
 .moves{
    margin-right: 400px;
    width: 100%;
    height: 50%;
+   margin-top: 20%;
 }
 
 
 
 .stats{
-   left: 300;
    width: 3px;
    border: 1px solid;
    border-color : blue;
    height: 1px;
 }
+.moves1 button{
+   background-color: black;
+   border: 19px solid green;
+   border-color : black;
+   font: 25pt Arial;
+   border-radius: 5px;
+   color: white;
+   margin-top: 90px ;
+   margin-right: 2vh;
+ }
+
 
 .moves button{
   background-color: black;
@@ -89,6 +106,7 @@ margin-bottom: 500px;
   border-radius: 5px;
   color: white;
   margin-top: 90px ;
+  margin-left: 2vh ;
 }
 
 .bottomRow button{
@@ -102,8 +120,10 @@ margin-bottom: 500px;
    color: white;
    border: 3px solid;
    border-color : red;
+   margin-top: 20vh;
+   margin-left:30vh;
 }
-
+/*
 #punch{
 background-color: blue;
 font-weight: bold;
@@ -130,11 +150,11 @@ font-weight: bold;
    }
    #spMove:hover{
       background-color: red;
-   }
+   }*/
 #music{
    position:absolute;
-   top: 90vh;
-   left:80vh;
+   top: 95vh;
+   left:120vh;
    z-index: 3;
 }
 
@@ -146,7 +166,16 @@ font-weight: bold;
 button:hover{
    background-color: red;
 }
+   #p{
+      font-family: 'Chakra Petch', sans-serif;
+      font-weight: 700;
+      font-size: 40px;
+      z-index: -5;
+     margin:100px 50px;
+    
+   }
 
+/*
 .hP{
    color: white;
    background-color: blue;
@@ -155,7 +184,6 @@ button:hover{
    margin-top: 800px;
    border: 2px solid;
    border-color : red;
-   margin:20px 250px;
 }
 
 .hP1{
@@ -166,31 +194,24 @@ button:hover{
    margin-top: 800px;
    border: 2px solid;
    border-color : red;
+   margin-left: 20px;
 }
 
 .bar{
    font-weight: bold;
    font-size: larger;
-   left:300;
    width: 650px;
    height:30px;
    background-color: green;
    border: 4px solid black;
-   margin-top:20px;
+   margin-top:2px;
 }
 
-#p{
-   font-family: 'Chakra Petch', sans-serif;
-   font-weight: 700;
-   font-size: 40px;
-   z-index: -5;
-  margin:100px 50px;
- 
-}
+
 
 h2{
    font-size: 50px;
-   margin-right: 90px;
-
+margin-right: 5vh;
+margin-left: 5vh;
+padding: 0%;
 }
-

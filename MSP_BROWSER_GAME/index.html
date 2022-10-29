@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHINOBI SMASH</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+    <body>
+        <div>
+            <div id="music">
+              <img src="images/sound_on.png" onclick="mute()";>
+            </div>
+            <audio id="sound">
+            <source  src="music/510953__theoter__cinematic-battle-song.mp3" type="audio/mpeg">
+              Your browser does not support audio.
+            </audio>
+            </div>
+        <!--GAMING CONTAINER-->
+<div id="container">
+
+    <!----------HP BAR AND TIMER --------->
+    <div id="header">
+
+        <!--FIGHTER 1 HP-->
+        <div id="fighter1_Stat" class="stats">
+            <span class="hP"> HP</span><br>
+            <div class="hpBorder">
+            <div id="fighter1_HP" class="bar"> NARUTO UZUMAKI</div> 
+           </div>
+           </div>
+                    
+           <!--TIMER-->
+           <div id="timer">
+            <h2 id="h2">00:00</h2>
+            </div>
+
+
+        <!--FIGHTER 2-->
+ <div id="rockStat" class="stats">
+     <span class="hP"> HP</span><br>
+    <div class="hpBorder">
+    <div id="fighter2_HP" class="bar"> THE fighter2_ </div> 
+   </div>
+   </div>
+  </div> <!--END OF header -->
+
+    <!----------------fighting buttons-------------->
+    <div id="fighting">
+    <div class="moves" alt="MOVES">
+        <button id="punch" onclick="punch()">PUNCH</button>
+        <button id="kick" onclick="kick()">KICK</button>
+        <button id="spMove" onclick="spMove()">SPECIAL MOVE</button>
+      </div>
+    
+       <!--fighting moves 2-->
+    
+       <div class="moves1" alt="MOVES">
+        <button id="punch" onclick="punch1()">PUNCH</button>
+        <button id="kick" onclick="kick1()">KICK</button>
+        <button id="spMove" onclick="spMove1()">SPECIAL MOVE</button>
+        </div>
+    </div>
+
+
+
+
+
+
+<!-----------------FIGHTERS BOX----------------------->
+        <div id="topRow">
+
+            <div id="player1" class ="char">
+                <img src="character_images/naruto.PNG">
+           </div>
+
+           <div id="player2" class="char">
+            <img src="character_images/rocklee.PNG">
+         </div>
+
+        </div>
+
+
+
+        <!-------------FIGHTER DIALOGUE BOX----------->
+        <div id="bottomRow">
+<p id="p">.>FIGHTER 1 VS  FIGHTER 2</p>
+        </div>
+
+
+
+
+
+<!---CHARACTER SELECTION BUTTON FIGHT BUTTON MAIN MENU BUTTON-->
+        <div id="footer">
+            <button id="homeButton" href="start _screen/start_game.html">MAIN MENU</button></a><!--link to start screen-->
+            <button id="fightButton" onclick="fightButton()"> FIGHT </button>
+            <button id="charSelect" href="">CHANGE CHARACTER</button></a><!--link to start screen-->
+        </div>
+
+
+
+
+</div>   <!--END OF GAMING CONTAINER-->
+<script src="script.js"></script>       
+    </body>
+    </html>

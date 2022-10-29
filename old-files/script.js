@@ -4,11 +4,11 @@ let bottomRow = document.getElementsByClassName('bottomRow');
 
 let stats = document.getElementsByClassName('stats');
 
-let fighter1_Stat = document.getElementById('fighter1_Stat');
+let paperStat = document.getElementById('paperStat');
 
-let fighter1_HP = document.getElementById('fighter1_HP');
+let paperHP = document.getElementById('paperHP');
 
-let fighter2_HP = document.getElementById('fighter2_HP');
+let rockHP = document.getElementById('rockHP');
 
 let moveButtons = document.getElementById('moveButtons');
 
@@ -82,8 +82,8 @@ function kick() {
             roHP = 0;
         }
         let roHPBarWidth = (roHP /100)*650;    /* damage divided by a hundred = % of pixel width lost  */ 
-        fighter2_HP.style.width = roHPBarWidth + "px";
-        p.innerText += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + roHP + "hp " + "\n";
+        rockHP.style.width = roHPBarWidth + "px";
+        p.innerText += ' paper attacks rock with ' + damage + 'xp The Rock now has ' + roHP + "hp " + "\n";
     } else{
         p.innerText +=' YOU MISSED!!! '+ "\n";
     }if (roHP == 0){
@@ -104,8 +104,8 @@ function punch() {
             roHP = 0;
         }
         let roHPBarWidth = (roHP /100)*650; /* damage divided by a hundred = % of pixel width lost  */ 
-        fighter2_HP.style.width = roHPBarWidth + "px";
-        p.innerText += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + roHP + "hp "+ "\n";
+        rockHP.style.width = roHPBarWidth + "px";
+        p.innerText += ' paper attacks rock with ' + damage + 'xp The Rock now has ' + roHP + "hp "+ "\n";
     } else{
         p.innerText +=' YOU MISSED!!! '+ "\n";
     }if (roHP == 0){
@@ -126,8 +126,8 @@ function spMove() {
             roHP = 0;
         }
         let roHPBarWidth = (roHP /100)*650; /* damage divided by a hundred = % of pixel width lost  */ 
-        fighter2_HP.style.width = roHPBarWidth + "px";
-        p.innerText += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + roHP + "hp "+ "\n";
+        rockHP.style.width = roHPBarWidth + "px";
+        p.innerText += ' paper attacks rock with ' + damage + 'xp The Rock now has ' + roHP + "hp "+ "\n";
     } else{
         p.innerText +=' YOU MISSED!!! '+ "\n";
     }if (roHP == 0){
@@ -151,8 +151,8 @@ function kick1() {
             papHP = 0;
         }
         let papHPBarWidth = (papHP /100)*650; /* damage divided by a hundred = % of pixel width lost  */ 
-        fighter1_HP.style.width = papHPBarWidth + "px";
-        p.innerText += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + papHP + "hp "+ "\n";
+        paperHP.style.width = papHPBarWidth + "px";
+        p.innerText += ' paper attacks rock with ' + damage + 'xp The Rock now has ' + papHP + "hp "+ "\n";
     } else{
         p.innerText +=' YOU MISSED!!! '+ "\n";
     }if (roHP == 0){
@@ -171,8 +171,8 @@ function punch1() {
             papHP = 0;
         }
         let papHPBarWidth = (papHP /100)*650; /* damage divided by a hundred = % of pixel width lost  */ 
-        fighter1_HP.style.width = papHPBarWidth + "px";
-        p.innerText += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + papHP + "hp "+ "\n";
+        paperHP.style.width = papHPBarWidth + "px";
+        p.innerText += ' paper attacks rock with ' + damage + 'xp The Rock now has ' + papHP + "hp "+ "\n";
     } else{
         p.innerText +=' YOU MISSED!!! '+ "\n";
     }if (roHP == 0){
@@ -193,8 +193,8 @@ function spMove1() {
             papHP = 0;
         }
         let papHPBarWidth = (papHP /100)*650; /* damage divided by a hundred = % of pixel width lost  */ 
-        fighter1_HP.style.width = papHPBarWidth + "px";
-        p.innerText += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + papHP + "hp "+ "\n";
+        paperHP.style.width = papHPBarWidth + "px";
+        p.innerText += ' paper attacks rock with ' + damage + 'xp The Rock now has ' + papHP + "hp "+ "\n";
     } else{
         p.innerText +=' YOU MISSED!!! '+ "\n";
     }if (roHP == 0){
@@ -227,6 +227,6 @@ function naruto(){
     document.getElementsByClassName("row").style.backgroundImage = url("images/naruto.PNG");
 }
 
-function fighter2_Lee(){
-    document.getElementsByClassName("row").style.backgroundImage = url("images/fighter2_lee.PNG");
+function rockLee(){
+    document.getElementsByClassName("row").style.backgroundImage = url("images/rocklee.PNG");
 }

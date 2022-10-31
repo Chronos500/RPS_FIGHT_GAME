@@ -32,48 +32,43 @@ body{
  }
 
  #fighter1_HP{
-    font-weight: bold;
-    font-size: 2vh;
-    border: solid 5px rgb(255, 0, 89);
-    width: 650px;
-    height: 8%;
-    background-color: blue;
-    border: 4px solid black;
+   transform: scaleX(1);
+    
    
  }
  
 
  #fighter2_HP{
-    
-    font-weight: bold;
+    transform: scaleX(1);
+ }
+
+.bar{font-weight: bold;
     font-size: 2vh;
     border: solid 5px rgb(255, 0, 89);
     width: 650px;
-    height: 8%;
-    background-color: blue;
+    background-color: rgb(0, 255, 38);
     border: 4px solid black;
     margin-top:2px;
-    transform: scaleX(-1)
+    transform: scaleX(-1);
  }
 
- 
- 
 
- /*.bar{
-    font-weight: bold;
-    font-size: 2vh;
-    border: solid 5px rgb(255, 0, 89);
-    width: 100%;
-    height: 8%;
-    background-color: yellow;
-    padding-right:70%;
-    border: 4px solid black;
-    margin-top:2px;
- }*/
 
+
+.fighter_Name{
+  color: #3de2c8;
+  font-weight: bold;
+  font-size: 2vh;
+  background-color:#bebebe;
+  margin-right:35vw;
+}
 
  #timer{
     font-size: 150%;
+    border: 5px red solid;
+    border-radius: 100px;
+    background-color: black;
+    color: white;
  }
 
  /***fighting buttons***/
@@ -86,12 +81,14 @@ body{
 #fighting button{
     font-size: 150%;
     border-radius: 80px;
+
 }
 
  #punch{
     background-color: blue;
     font-weight: bold;
-    color:rgb(254, 254, 254)
+    color:rgb(254, 254, 254);
+    
     }
     #kick{
     background-color: yellow;
@@ -129,21 +126,19 @@ body{
 }
 
 
-#player1{
-   
-}
+
 
 #player1 img{
- height: 32em;
+ height: 52em;
 }
 
 #player2{
-   
-    transform: scaleX(-1);
+ transform: scaleX(-1);
 }
 
 #player2 img{
-    height:34em
+    height:54em
+    
 }
 
 /******************************fighters dialog box*****************************************************/
@@ -151,8 +146,13 @@ body{
 
 
 .fighter_highlight {
-    color: #3de2c8;
+    color: #e2c43d;
   }
+
+.fighter_highlight2{
+color: coral;
+  }
+
   
   .fighter_dialog_wrap {
     background: #1b1a1a;
@@ -223,6 +223,34 @@ body{
     overflow-y:scroll;
     white-space: pre-wrap;
   }
+
+  /*SCOREBOARD*/
+  .score{
+    position:sticky;
+    width:12%;
+    height:15%;
+    color: rgb(2, 3, 5);
+
+  }
+
+  table{
+    position: sticky;
+    width:100%;
+    background-color: beige;
+    margin-left:80vw;
+  }
+  table td{
+    border: #000000 4px solid;
+  }
+
+thead{
+  font-size: larger;
+  font-weight: 400;
+}
+table{
+  background-color: bisque;
+}
+
   
   .fighter_triangle {
     width: 30px;
@@ -268,13 +296,6 @@ body{
     align-items: center;
     width: 100%;
     height: 7em;
-    border: 5px solid black;
-    background-color: brown;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
-      0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
-      0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
-      0 100px 80px rgba(0, 0, 0, 0.07);
-      border-radius: 80px;
 }
 
 #footer button:hover{

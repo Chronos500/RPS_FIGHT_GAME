@@ -6,11 +6,13 @@ let stats = document.getElementsByClassName('stats');
 
 let fighter1_Stat = document.getElementById('fighter1_Stat');
 
+let fighter2_Stat = document.getElementById('fighter2_Stat');
+
 let fighter1_HP = document.getElementById('fighter1_HP');
 
 let fighter2_HP = document.getElementById('fighter2_HP');
 
-let moveButtons = document.getElementById('moveButtons');
+let fighting = document.getElementById('fighting');
 
 const timer = document.querySelector('h2');
 
@@ -59,7 +61,7 @@ const countDown = setInterval(() =>{
     seconds--;
     timer.innerHTML = `${seconds}`;
     if(seconds <=0 || seconds <1){
-        h2.innerText += "TIMES UP!";
+        h2.innerHTML = "TIMES UP!";
     }
     
 },1000)
@@ -83,11 +85,11 @@ function kick() {
         }
         let roHPBarWidth = (roHP /100)*650;    /* damage divided by a hundred = % of pixel width lost  */ 
         fighter2_HP.style.width = roHPBarWidth + "px";
-        p.innerText += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + roHP + "hp " + "\n";
+        p.innerHTML += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + roHP + "hp " + "\n";
     } else{
-        p.innerText +=' YOU MISSED!!! '+ "\n";
+        p.innerHTML +=' YOU MISSED!!! '+ "\n";
     }if (roHP == 0){
-        p.innerText += " you win! " + "\n";
+       return  p.innerHTML += " you win! " + "\n";
      
     }
   
@@ -105,11 +107,19 @@ function punch() {
         }
         let roHPBarWidth = (roHP /100)*650; /* damage divided by a hundred = % of pixel width lost  */ 
         fighter2_HP.style.width = roHPBarWidth + "px";
-        p.innerText += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + roHP + "hp "+ "\n";
+        p.innerHTML += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + roHP + "hp "+ "\n";
     } else{
-        p.innerText +=' YOU MISSED!!! '+ "\n";
+        p.innerHTML +=' YOU MISSED!!! '+ "\n";
     }if (roHP == 0){
-        p.innerText = " you win! "+ "\n";
+        var r=confirm("YOU WIN");
+        if (r==true)
+          {
+          x="You pressed OK!";
+          }
+         else
+          {
+          x="You pressed Cancel!";
+          }
      
     }
   
@@ -127,11 +137,11 @@ function spMove() {
         }
         let roHPBarWidth = (roHP /100)*650; /* damage divided by a hundred = % of pixel width lost  */ 
         fighter2_HP.style.width = roHPBarWidth + "px";
-        p.innerText += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + roHP + "hp "+ "\n";
+        p.innerHTML += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + roHP + "hp "+ "\n";
     } else{
-        p.innerText +=' YOU MISSED!!! '+ "\n";
+        p.innerHTML +=' YOU MISSED!!! '+ "\n";
     }if (roHP == 0){
-        p.innerText += " you win! "+ "\n";
+        p.innerHTML += " you win! "+ "\n";
      
     }
   
@@ -152,11 +162,11 @@ function kick1() {
         }
         let papHPBarWidth = (papHP /100)*650; /* damage divided by a hundred = % of pixel width lost  */ 
         fighter1_HP.style.width = papHPBarWidth + "px";
-        p.innerText += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + papHP + "hp "+ "\n";
+        p.innerHTML += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + papHP + "hp "+ "\n";
     } else{
-        p.innerText +=' YOU MISSED!!! '+ "\n";
+        p.innerHTML +=' YOU MISSED!!! '+ "\n";
     }if (roHP == 0){
-        p.innerText += " you win! "+ "\n";
+        p.innerHTML += " you win! "+ "\n";
     }
     }
 
@@ -172,11 +182,11 @@ function punch1() {
         }
         let papHPBarWidth = (papHP /100)*650; /* damage divided by a hundred = % of pixel width lost  */ 
         fighter1_HP.style.width = papHPBarWidth + "px";
-        p.innerText += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + papHP + "hp "+ "\n";
+        p.innerHTML += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + papHP + "hp "+ "\n";
     } else{
-        p.innerText +=' YOU MISSED!!! '+ "\n";
+        p.innerHTML +=' YOU MISSED!!! '+ "\n";
     }if (roHP == 0){
-        p.innerText += " you win! "+ "\n";
+        p.innerHTML += " you win! "+ "\n";
      
     }
   
@@ -194,11 +204,11 @@ function spMove1() {
         }
         let papHPBarWidth = (papHP /100)*650; /* damage divided by a hundred = % of pixel width lost  */ 
         fighter1_HP.style.width = papHPBarWidth + "px";
-        p.innerText += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + papHP + "hp "+ "\n";
+        p.innerHTML += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + papHP + "hp "+ "\n";
     } else{
-        p.innerText +=' YOU MISSED!!! '+ "\n";
+        p.innerHTML +=' YOU MISSED!!! '+ "\n";
     }if (roHP == 0){
-        p.innerText += " you win! "+ "\n";
+        alert(" you win! "+ "\n");
      
     }
 }

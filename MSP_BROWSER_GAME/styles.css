@@ -1,20 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Calistoga&display=swap");
+
+body{
+    background-image:url("images/star_background.jpeg");
+
+}
+
+
+
 /******************** HEADER **********************/
+
+
 #header{
     display: flex;
     justify-content:space-between;
+    size: 100%;
+    background-image:url('images/Screen Shot 2022-10-29 at 11.57.23 AM.png');
+    background-size: 100% 100%;
+    
 }
 
-#rockHP{
-    background-color: aqua;
-    margin:2px 2px;
-    border:5px green solid
-   
- }
- 
- #paperHP{
-    background-color: orange;
-    margin-bottom:1px;
- }
+
 
  .hP{
     color: white;
@@ -25,17 +30,47 @@
     border: 2px solid;
     border-color : red;
  }
+
+ #fighter1_HP{
+    font-weight: bold;
+    font-size: 2vh;
+    border: solid 5px rgb(255, 0, 89);
+    width: 650px;
+    height: 8%;
+    background-color: blue;
+    border: 4px solid black;
+   
+ }
  
 
- .bar{
+ #fighter2_HP{
+    
     font-weight: bold;
-    font-size: 40px;
-    width: 950px;
-    height: 5%;
-    background-color: green;
+    font-size: 2vh;
+    border: solid 5px rgb(255, 0, 89);
+    width: 650px;
+    height: 8%;
+    background-color: blue;
     border: 4px solid black;
     margin-top:2px;
+    transform: scaleX(-1)
  }
+
+ 
+ 
+
+ /*.bar{
+    font-weight: bold;
+    font-size: 2vh;
+    border: solid 5px rgb(255, 0, 89);
+    width: 100%;
+    height: 8%;
+    background-color: yellow;
+    padding-right:70%;
+    border: 4px solid black;
+    margin-top:2px;
+ }*/
+
 
  #timer{
     font-size: 150%;
@@ -45,10 +80,12 @@
 #fighting{
     display: flex;
     justify-content:space-between;
+   
 }
 
 #fighting button{
     font-size: 150%;
+    border-radius: 80px;
 }
 
  #punch{
@@ -72,6 +109,9 @@
        color:black
        }
       
+       /*fighter names*/
+       
+
 
        /**FIGHTING CONTAINER**/
 #topRow{
@@ -81,12 +121,16 @@
     width: 100%;
     height: 68em;
     border: 5px solid black;
-    background-color: brown;
-
+    background-image:url('images/IMG_4025.JPG');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 80px;
+    box-shadow:red;
 }
 
+
 #player1{
-    border:solid black 8px;
+   
 }
 
 #player1 img{
@@ -94,7 +138,7 @@
 }
 
 #player2{
-    border:solid black 8px;
+   
     transform: scaleX(-1);
 }
 
@@ -102,16 +146,121 @@
     height:34em
 }
 
-/**fighters dialog box**/
+/******************************fighters dialog box*****************************************************/
 
-#bottomRow{
+
+
+.fighter_highlight {
+    color: #3de2c8;
+  }
+  
+  .fighter_dialog_wrap {
+    background: #1b1a1a;
     width: 100%;
     height: 30em;
-    border: 5px solid black;
-    background-color: rgb(50, 42, 165);
+    border-radius: 80px;
+    position: relative;
+    font-family: "Arial", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+      0 100px 80px rgba(0, 0, 0, 0.07);
+  }
+  
+  .fighter_dialog_wrap:before,
+  .fighter_dialog_wrap:after {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    box-shadow: -20px 0 0px -15px #bebebe;
+    content: "";
+    position: absolute;
+    top: 25px;
+  }
+  
+  .fighter_dialog_wrap:before {
+    left: 20px;
+  }
+  
+  .fighter_dialog_wrap:after {
+    right: 20px;
+    transform: rotate(180deg);
+  }
+  
+  .fighter_dialog_inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .fighter_dialog_inner:before,
+  .fighter_dialog_inner:after {
+    height: 5px;
+    width: 5px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 0px 5px #1b1a1a;
+    background: #bebebe;
+    position: absolute;
+    content: "";
+    top: 72px;
+    z-index: 2;
+  }
+  
 
-}
-
+  
+  
+  
+ #p{
+    color: antiquewhite;
+    font-size: 1.5em;
+    font-weight: bold;
+     margin: 0;
+    margin-left:2vh;
+    overflow-y:scroll;
+    white-space: pre-wrap;
+  }
+  
+  .fighter_triangle {
+    width: 30px;
+    height: 20px;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    background: #bebebe;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    animation: float 3.4s infinite;
+  }
+  
+  .fighter_triangle:before {
+    content: "";
+    width: 18px;
+    height: 12px;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    background: red#1b1a1a;
+    position: absolute;
+    right: 6px;
+    top: 3px;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    24% {
+      transform: translateY(-6.56px);
+    }
+    40% {
+      transform: translateY(6.28px);
+    }
+   66% {
+      transform: translateY(-2.56px);
+    }
+  }
+/***********************************************************************************************************/
 /****footer**/
 #footer{
     display: flex;
@@ -121,7 +270,11 @@
     height: 7em;
     border: 5px solid black;
     background-color: brown;
-
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+      0 100px 80px rgba(0, 0, 0, 0.07);
+      border-radius: 80px;
 }
 
 #footer button:hover{
@@ -132,6 +285,7 @@
 #footer button{
     width: 30em;
     height: 3em;
+    border-radius: 80px;
 }
     #homeButton{
         background-color: green;
@@ -150,10 +304,4 @@
     #charSelect{
         background-color: blue;
         color: azure;
-    }
-
-    /*dialogue box*/
-
-    #p{
-        font-size:3em;
     }

@@ -12,9 +12,9 @@
 </head>
     <body>
         <div>
-            <div id="music">
+            <!--<div id="music">
               <img src="images/sound_on.png" onclick="mute()";>
-            </div>
+            </div>--->
             <audio id="sound">
             <source  src="music/510953__theoter__cinematic-battle-song.mp3" type="audio/mpeg">
               Your browser does not support audio.
@@ -30,9 +30,11 @@
         <div id="fighter1_Stat" class="stats">
             <span class="hP"> HP</span><br>
             <div class="hpBorder">
-            <div id="fighter1_HP" class="bar"> NARUTO UZUMAKI</div> 
+            <div id="fighter1_HP" class="bar"> NARUTO </div> 
+         
            </div>
-           </div>
+        </div>
+           
                     
            <!--TIMER-->
            <div id="timer">
@@ -41,11 +43,12 @@
 
 
         <!--FIGHTER 2-->
- <div id="rockStat" class="stats">
+ <div id="fighter2_Stat" class="stats">
      <span class="hP"> HP</span><br>
     <div class="hpBorder">
-    <div id="fighter2_HP" class="bar"> THE fighter2_ </div> 
-   </div>
+    <div id="fighter2_HP" class="bar"> ROCK LEE </div> 
+  </div><br>
+  <span class="fighter_Name"> FIGHTER 1 VS FIGHTER 2</span>
    </div>
   </div> <!--END OF header -->
 
@@ -75,11 +78,11 @@
         <div id="topRow">
 
             <div id="player1" class ="char">
-                <img src="character_images/naruto.PNG">
+                <img src="images/naruto.PNG">
            </div>
 
            <div id="player2" class="char">
-            <img src="character_images/rocklee.PNG">
+            <img src="images/rocklee.PNG">
          </div>
 
         </div>
@@ -87,19 +90,27 @@
 
 
         <!-------------FIGHTER DIALOGUE BOX----------->
-        <div id="bottomRow">
-<p id="p">.>FIGHTER 1 VS  FIGHTER 2</p>
-        </div>
+ 
+        
+<div class="fighter_wrap">
+    <div class="fighter_dialog_wrap"
 
+          <div class="fighter_dialog_inner">
+            <p id="p">
+              Hi thre! I'm <span class="fighter_highlight">Naruto</span>'s ambassador of tourism! And I actually have a bit of a problem here...
+            </p>
+          </div>
+          <div class="fighter_triangle"></div>
+        </div>
 
 
 
 
 <!---CHARACTER SELECTION BUTTON FIGHT BUTTON MAIN MENU BUTTON-->
         <div id="footer">
-            <button id="homeButton" href="start _screen/start_game.html">MAIN MENU</button></a><!--link to start screen-->
-            <button id="fightButton" onclick="fightButton()"> FIGHT </button>
-            <button id="charSelect" href="">CHANGE CHARACTER</button></a><!--link to start screen-->
+            <a href="start_game.html"><button id="homeButton">MAIN MENU</button></a><!--link to start screen-->
+           <button id="fightButton" onclick="fightButton()"> FIGHT </button>
+            <a href="characters.html"><button id="charSelect">CHANGE CHARACTER</button></a><!--link to start screen-->
         </div>
 
 

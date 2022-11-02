@@ -46,7 +46,8 @@ body{
     font-size: 2vh;
     border: solid 5px rgb(255, 0, 89);
     width: 650px;
-    background-color: rgb(0, 255, 38);
+    background-image: linear-gradient(to right, red 15%,rgb(255, 136, 0) 30%, yellow 55%, green 70%);
+    
     border: 4px solid black;
     margin-top:2px;
     transform: scaleX(-1);
@@ -106,7 +107,9 @@ body{
        color:black
        }
       
-       /*fighter names*/
+     .moves1{
+      visibility: hidden;
+     }
        
 
 
@@ -129,7 +132,7 @@ body{
 
 
 #player1 img{
- height: 52em;
+ height: 40em;
 }
 
 #player2{
@@ -137,20 +140,19 @@ body{
 }
 
 #player2 img{
-    height:54em
-    
-}
+    height:44em;
+    }
 
 /******************************fighters dialog box*****************************************************/
 
 
 
 .fighter_highlight {
-    color: #e2c43d;
+    color: #e23d3d;
   }
 
 .fighter_highlight2{
-color: coral;
+color: rgb(80, 220, 255);
   }
 
   
@@ -220,74 +222,77 @@ color: coral;
     font-weight: bold;
      margin: 0;
     margin-left:2vh;
-    overflow-y:scroll;
+    overflow-x:auto;
+    overflow-y:auto;
     white-space: pre-wrap;
   }
 
   /*SCOREBOARD*/
+ 
+
   .score{
-    position:sticky;
-    width:12%;
-    height:15%;
-    color: rgb(2, 3, 5);
-
-  }
-
-  table{
     position: sticky;
-    width:100%;
+    width:10%;
     background-color: beige;
     margin-left:80vw;
   }
-  table td{
-    border: #000000 4px solid;
+  #player_1{
+    border: #c90202 4px solid;
+    font-size: larger;
+    font-weight: 500;
+  }
+  #cpu{
+    border: #0802b4 4px solid;
+    font-size: larger;
+    font-weight: 500;
   }
 
-thead{
+
+#wins{
   font-size: larger;
   font-weight: 400;
 }
-table{
+#losses{
   background-color: bisque;
 }
 
-  
-  .fighter_triangle {
-    width: 30px;
-    height: 20px;
-    clip-path: polygon(0 0, 50% 100%, 100% 0);
-    background: #bebebe;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    animation: float 3.4s infinite;
+.fighter_triangle {
+  width: 30px;
+  height: 20px;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  background: #bebebe;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  animation: float 3.4s infinite;
+}
+
+.fighter_triangle:before {
+  content: "";
+  width: 18px;
+  height: 12px;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  background: red#1b1a1a;
+  position: absolute;
+  right: 6px;
+  top: 3px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
   }
-  
-  .fighter_triangle:before {
-    content: "";
-    width: 18px;
-    height: 12px;
-    clip-path: polygon(0 0, 50% 100%, 100% 0);
-    background: red#1b1a1a;
-    position: absolute;
-    right: 6px;
-    top: 3px;
+  24% {
+    transform: translateY(-6.56px);
   }
-  
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    24% {
-      transform: translateY(-6.56px);
-    }
-    40% {
-      transform: translateY(6.28px);
-    }
-   66% {
-      transform: translateY(-2.56px);
-    }
+  40% {
+    transform: translateY(6.28px);
   }
+ 66% {
+    transform: translateY(-2.56px);
+  }
+}
+
 /***********************************************************************************************************/
 /****footer**/
 #footer{

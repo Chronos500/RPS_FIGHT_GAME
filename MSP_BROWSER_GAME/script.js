@@ -22,49 +22,44 @@ let h2 = document.getElementById("h2")
 
 
 
+
+
+
 //music
 
-let music = document.getElementById('music');
+
 
 let sound = document.getElementById('sound');
-
-let soundOn = "0";
+let on = "on";
 
 function fightButton() {
-    sound.play();
-sound.volume = 0.2;
-
-
-}
-
-function mute(){
-    if (soundOn == "0"){
-        soundOn = "1";
-        music.innerHTML ="<img src='images/mute_sound.png'>";
+   
         sound.play();
-    } else{
-        soundOn = "0";
-        music.innerHTML ="<img src='images/sound_on.png'>";
-        sound.pause();
-    } 
+        sound.volume = 0.2;
 }
 
-    
-    
+
+function fightButtonPause(){
+    sound.pause();
+}
+  
+
 
 //timer
-let seconds = 99;
+let seconds = 60;
 
 timer.innerHTML = seconds;
-timer.innerHTML = `${seconds}`;
+timer.innerHTML = `00:${seconds}`;
 const countDown = setInterval(() =>{
     seconds--;
-    timer.innerHTML = `${seconds}`;
+    timer.innerHTML = `00:${seconds}`;
     if(seconds <=0 || seconds <1){
-        h2.innerHTML = "TIMES UP!";
-    }
-    
-},1000)
+        h2.innerHTML = "YOU LOSE!";
+        fighting.style.visibility = 'hidden';
+       
+      }
+    },1000)
+   
 
 
 //health
@@ -72,10 +67,38 @@ const countDown = setInterval(() =>{
 let papHP = 100;
 let roHP = 100;
 
+
+//winner loser count//
+
+
+let wins = document.getElementById("wins")
+let losses = document.getElementById("losses")
+
+
 //-------------------------------------FIGHTER 1 attack -------------------------------------moves//
 
+
+let punching = document.getElementById("punch");
+let kicking = document.getElementById("kick");
+let specialMove = document.getElementById("spMove"); 
+let characterImg = document.getElementById("characterImg")
+let characterImg2 = document.getElementById("characterImg2");
+let i = 0;
+
 //KICK//
+
+const kickSound = new Audio('SOUNDFX/karate-chop-6357.mp3')
+
+
 function kick() {
+    if( i==0 ){
+        characterImg.src="images/narutoKick.GIF"; 
+        i=1;
+     }
+    else if( i==1 ){
+       characterImg.src="images/narutoStance.GIF";
+       i=0;
+    }
     let impact = Math.round(Math.random()*10);
     if (impact <= 6){
         let damage = Math.round(Math.random()*10)+5;
@@ -84,20 +107,35 @@ function kick() {
             roHP = 0;
         }
         let roHPBarWidth = (roHP /100)*650;    /* damage divided by a hundred = % of pixel width lost  */ 
-        fighter2_HP.style.width = roHPBarWidth + "px";
-        p.innerHTML += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + roHP + "hp " + "\n";
-    } else{
+        fighter2_HP.style.width = roHPBarWidth + "px";;
+        p.innerHTML += '<span class="fighter_highlight2">Naruto Uzumaki!!</span> kicked <span class="fighter_highlight">Rock Lee</span> with ' + damage + 'xp <span class="fighter_highlight">Rock Lee</span> now has ' + roHP + "hp " + "\n";
+        kickSound.play();
+        kickSound.volume = 0.1;
+        } else{
         p.innerHTML +=' YOU MISSED!!! '+ "\n";
     }if (roHP == 0){
-       return  p.innerHTML += " you win! " + "\n";
-     
-    }
-  
+      p.innerHTML = "you win!" + "\n" ;
+   fighting.style.visibility = 'hidden';
+   wins.innerHTML +=1;
+   
+} else{
+    cpuAttack()
+    p.scrollTop = p.scrollHeight;
+}
 }
 
 
 //PUNCH//
+const punchSound = new Audio('SOUNDFX/punch-2-37333.mp3')
 function punch() {
+    if( i==0 ){
+        characterImg.src="images/narutoSM.GIF"; 
+        i=1;
+     }
+    else if( i==1 ){
+       characterImg.src="images/narutoStance.GIF";
+       i=0;
+    }
     let impact = Math.round(Math.random()*10);
     if (impact <= 7){
         let damage = Math.round(Math.random()*10)+3;
@@ -107,27 +145,36 @@ function punch() {
         }
         let roHPBarWidth = (roHP /100)*650; /* damage divided by a hundred = % of pixel width lost  */ 
         fighter2_HP.style.width = roHPBarWidth + "px";
-        p.innerHTML += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + roHP + "hp "+ "\n";
+        p.innerHTML += ' <span class="fighter_highlight2">Naruto Uzumaki!!</span> punched <span class="fighter_highlight">Rock Lee</span> with ' + damage + 'xp <span class="fighter_highlight">Rock Lee</span> now has ' + roHP + "hp "+ "\n";
+        punchSound.play();
+        punchSound.volume = 0.1;
+        
     } else{
         p.innerHTML +=' YOU MISSED!!! '+ "\n";
     }if (roHP == 0){
-        var r=confirm("YOU WIN");
-        if (r==true)
-          {
-          x="You pressed OK!";
-          }
-         else
-          {
-          x="You pressed Cancel!";
-          }
+        p.innerHTML = " you win! " + "\n";
+        fighting.style.visibility = 'hidden';
+        wins.innerHTML +=1;
      
+    }else{
+        cpuAttack()
+        p.scrollTop = p.scrollHeight;
     }
   
 }
 
 
 //SPECIAL MOVE//
+const spMoveSound = new Audio('SOUNDFX/laserrocket2-6284.mp3')
 function spMove() {
+    if( i==0 ){
+        characterImg.src="images/jinchuriki.GIF"; 
+        i=1;
+     }
+    else if( i==1 ){
+       characterImg.src="images/narutoStance.GIF";
+       i=0;
+    }
     let impact = Math.round(Math.random()*10);
     if (impact <= 1){
         let damage = Math.round(Math.random()*10)+25;
@@ -137,12 +184,19 @@ function spMove() {
         }
         let roHPBarWidth = (roHP /100)*650; /* damage divided by a hundred = % of pixel width lost  */ 
         fighter2_HP.style.width = roHPBarWidth + "px";
-        p.innerHTML += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + roHP + "hp "+ "\n";
+        p.innerHTML += ' <span class="fighter_highlight2">Naruto Uzumaki!!</span> used SPECIAL MOVE!!! on <span class="fighter_highlight">Rock Lee</span> with ' + damage + 'xp <span class="fighter_highlight">Rock Lee</span> now has ' + roHP + "hp "+ "\n";
+        spMoveSound.play();
+        spMoveSound.volume = 0.1;
+      
     } else{
         p.innerHTML +=' YOU MISSED!!! '+ "\n";
     }if (roHP == 0){
-        p.innerHTML += " you win! "+ "\n";
-     
+       p.innerHTML = " you win! " + "\n";
+       fighting.style.visibility = 'hidden';
+       wins.innerHTML +=1;
+    } else{
+        cpuAttack()
+        p.scrollTop = p.scrollHeight;
     }
   
 }
@@ -152,7 +206,19 @@ function spMove() {
 //---------------------------------FIGHTER 2 attack moves------------------------------//
 
 //KICK//
-function kick1() {
+
+
+function cpuAttack() {
+    if( i==0 ){
+        characterImg2.src="images/narutoKick.GIF"; 
+        i=1;
+     }
+    else if( i==1 ){
+       characterImg2.src="images/sasuke_kick.GIF.GIF";
+       i=0;
+    }
+    let attack = Math.ceil(Math.random()*3);
+    if (attack == 1){
     let impact = Math.round(Math.random()*10);
     if (impact <= 6){
         let damage = Math.round(Math.random()*10)+5;
@@ -162,18 +228,31 @@ function kick1() {
         }
         let papHPBarWidth = (papHP /100)*650; /* damage divided by a hundred = % of pixel width lost  */ 
         fighter1_HP.style.width = papHPBarWidth + "px";
-        p.innerHTML += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + papHP + "hp "+ "\n";
+        p.innerHTML += ' <span class="fighter_highlight">Rock Lee</span> kicked <span class="fighter_highlight2">Naruto Uzumaki!!</span> with ' + damage + 'xp <span class="fighter_highlight2">Naruto Uzumaki!!</span> now has ' + papHP + "hp "+ "\n";
+        kickSound.play();
+        kickSound.volume = 0.1;
     } else{
-        p.innerHTML +=' YOU MISSED!!! '+ "\n";
-    }if (roHP == 0){
-        p.innerHTML += " you win! "+ "\n";
+        p.innerHTML +='<span class="fighter_highlight">Rock Lee</span> KICKS AND MISSED '+ "\n";
+    }if (papHP == 0){
+        p.innerHTML = " YOU LOSE! " + "\n";
+        fighting.style.visibility = 'hidden';
+        losses.innerHTML +=1;
+        
     }
     }
 
 
 //PUNCH//
-function punch1() {
-    let impact = Math.round(Math.random()*10);
+if (attack == 2){
+    if( i==0 ){
+        characterImg2.src="images/sasukePunch.GIF"; 
+        i=1;
+     }
+    else if( i==1 ){
+       characterImg2.src="images/sasuke_kick.GIF.GIF";
+       i=0;
+    }
+   let impact = Math.round(Math.random()*10);
     if (impact <= 7){
         let damage = Math.round(Math.random()*10)+3;
         papHP -= damage;
@@ -182,19 +261,31 @@ function punch1() {
         }
         let papHPBarWidth = (papHP /100)*650; /* damage divided by a hundred = % of pixel width lost  */ 
         fighter1_HP.style.width = papHPBarWidth + "px";
-        p.innerHTML += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + papHP + "hp "+ "\n";
+        p.innerHTML += ' <span class="fighter_highlight">Rock Lee</span> punched <span class="fighter_highlight2">Naruto Uzumaki!!</span> with ' + damage + 'xp <span class="fighter_highlight2">Naruto Uzumaki!!</span> now has ' + papHP + "hp "+ "\n";
+        punchSound.play();
+        punchSound.volume = 0.1;
     } else{
-        p.innerHTML +=' YOU MISSED!!! '+ "\n";
-    }if (roHP == 0){
-        p.innerHTML += " you win! "+ "\n";
-     
+        p.innerHTML +=' <span class="fighter_highlight">Rock Lee</span> PUNCHED AND MISSED !!! '+ "\n";
+    }if (papHP == 0){
+        p.innerHTML = " YOU LOSE! " + "\n";
+        fighting.style.visibility = 'hidden';
+        losses.innerHTML +=1;
+       
     }
-  
 }
 
 
 //SPECIAL MOVE//
-function spMove1() {
+
+else{
+    if( i==0 ){
+        characterImg2.src="images/sasukespMove.GIF"; 
+        i=1;
+     }
+    else if( i==1 ){
+       characterImg2.src="images/sasuke_kick.GIF.GIF";
+       i=0;
+    }
     let impact = Math.round(Math.random()*10);
     if (impact <= 1){
         let damage = Math.round(Math.random()*10)+25;
@@ -204,39 +295,41 @@ function spMove1() {
         }
         let papHPBarWidth = (papHP /100)*650; /* damage divided by a hundred = % of pixel width lost  */ 
         fighter1_HP.style.width = papHPBarWidth + "px";
-        p.innerHTML += ' fighter1_ attacks fighter2_ with ' + damage + 'xp The fighter2_ now has ' + papHP + "hp "+ "\n";
+        p.innerHTML += ' <span class="fighter_highlight">Rock Lee</span> used SPECIAL MOVE on <span class="fighter_highlight2">Naruto Uzumaki!!</span> with ' + damage + 'xp <span class="fighter_highlight2">Naruto Uzumaki!!</span> now has ' + papHP + "hp "+ "\n";
+        spMoveSound1.play();
+        spMoveSound1.volume = 0.1;
     } else{
-        p.innerHTML +=' YOU MISSED!!! '+ "\n";
-    }if (roHP == 0){
-        alert(" you win! "+ "\n");
-     
-    }
+        p.innerHTML +=' <span class="fighter_highlight">Rock Lee</span> SPECIAL MOVE MISSED !!! '+ "\n";
+
+}
+if (papHP == 0){
+    p.innerHTML = " YOU LOSE! " + "\n";
+    fighting.style.visibility = 'hidden';
+    losses.innerHTML +=1;
+}
+}
 }
 
 
+const spMoveSound1 = new Audio('SOUNDFX/power-on-39172.mp3')
 
-/*character selection options*/
 
-function hinata(){
-    document.getElementsByClassName("row").style.backgroundImage = url("images/hinata.PNG");
-}
 
-function sasuke(){
-    document.getElementsByClassName("row").style.backgroundImage = url("images/sasuke.PNG");
-}
 
-function sakura(){
-    document.getElementsByClassName("row").style.backgroundImage = url("images/sakura.PNG");
-}
 
-function kakashi(){
-    document.getElementsByClassName("row").style.backgroundImage = url("images/kakashi.PNG");
-}
 
-function naruto(){
-    document.getElementsByClassName("row").style.backgroundImage = url("images/naruto.PNG");
-}
 
-function fighter2_Lee(){
-    document.getElementsByClassName("row").style.backgroundImage = url("images/fighter2_lee.PNG");
-}
+
+
+          
+       
+
+
+
+
+
+
+
+
+
+

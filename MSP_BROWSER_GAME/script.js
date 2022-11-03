@@ -1,13 +1,4 @@
 //define global variables pointing to divs//
-
-let bottomRow = document.getElementsByClassName('bottomRow');
-
-let stats = document.getElementsByClassName('stats');
-
-let fighter1_Stat = document.getElementById('fighter1_Stat');
-
-let fighter2_Stat = document.getElementById('fighter2_Stat');
-
 let fighter1_HP = document.getElementById('fighter1_HP');
 
 let fighter2_HP = document.getElementById('fighter2_HP');
@@ -21,22 +12,15 @@ const p = document.getElementById("p");
 let h2 = document.getElementById("h2")
 
 
-
-
-
-
 //music
-
-
 
 let sound = document.getElementById('sound');
 let on = "on";
 
 function fightButton() {
-   
         sound.play();
         sound.volume = 0.2;
-}
+    }
 
 
 function fightButtonPause(){
@@ -57,7 +41,7 @@ const countDown = setInterval(() =>{
         h2.innerHTML = "YOU LOSE!";
         fighting.style.visibility = 'hidden';
         losses.innerHTML =1;
-    }
+        }
         if (roHP == 0){
             clearInterval(countDown);
         }
@@ -89,9 +73,8 @@ const sadSound = new Audio('SOUNDFX/sad-meme-audio.mp3')
 //-------------------------------------FIGHTER 1 attack -------------------------------------moves//
 
 
-let punching = document.getElementById("punch");
-let kicking = document.getElementById("kick");
-let specialMove = document.getElementById("spMove"); 
+
+ 
 let characterImg = document.getElementById("characterImg")
 let characterImg2 = document.getElementById("characterImg2");
 let i = 0;
@@ -373,20 +356,3 @@ const storedWinsLoss = localStorage.getItem("player_1")
 if(storedWinsLoss){
     player_1.innerHTML = storedWinsLoss
 }
-
-
-
-
-
-          
-       
-
-
-
-
-
-
-
-
-
-

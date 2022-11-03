@@ -16,6 +16,7 @@ the goal is to defeat SASUSKE everytime you attack he counter attacks ramdonly w
 BOTH START WITH 100XP 
 
 &  30 seconds to defeat SASUKE
+OR YOU LOSE!
 
 
 HIT CHANCE
@@ -50,4 +51,31 @@ RESTART BUTTON:refreshes screen
 
 MUSIC BUTTON: one click plays music double click mutes music
 
-CHANGE BACKGROUND BUTTON soon to change backgrounds
+
+
+
+BUGS 
+-sasuke kick image not showing 
+-CHANGE BACKGROUND BUTTON soon to change backgrounds
+-win loss count save to local storage
+-add more characters also make 2 player mode
+
+
+CREDITS AND RESOURCES
+
+NARUTO SASUKE GIFS AND BACKGROUND IMAGES
+https://www.deviantart.com/d4rkn322/art/Naruto-The-Last-JUS-Sprites-Idle-Animation-717256301
+
+
+https://www.deviantart.com/danteg9b/art/Naruto-Online-Konoha-Battle-Background-726154252
+
+
+
+SOME OF THE CODES THAT I DID NOT KNOW HOW TO MAKE I GOOGLED..
+ LIKE HOW TO LINK IMAGE TO BUTTON OR HOW TO MAKE A TIMER AND WATCHED SOME YOUTUBE VIDEOS
+ OF  HOW TO DO THIS OR THAT ALSO FEW STACK OVERFLOW ARTICLES,
+  BUT I COMPILED 90% PERCENT OF IT OFF MY OWN IDEA
+   AND MOVING THINGS AROUND TESTING DIFFERENT FUNCTIONS.
+
+
+

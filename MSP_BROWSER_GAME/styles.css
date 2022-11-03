@@ -47,7 +47,7 @@ body{
     border: solid 5px rgb(255, 0, 89);
     width: 650px;
     background-image: linear-gradient(to right, red 15%,rgb(255, 136, 0) 30%, yellow 55%, green 70%);
-    
+    color:white;
     border: 4px solid black;
     margin-top:2px;
     transform: scaleX(-1);
@@ -56,17 +56,11 @@ body{
 
 
 
-.fighter_Name{
-  color: #3de2c8;
-  font-weight: bold;
-  font-size: 2vh;
-  background-color:#bebebe;
-  margin-right:35vw;
-}
+
 
  #timer{
     font-size: 150%;
-    border: 5px red solid;
+    border: 5px rgb(255, 0, 0) solid;
     border-radius: 100px;
     background-color: black;
     color: white;

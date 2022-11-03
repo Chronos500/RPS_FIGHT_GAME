@@ -82,6 +82,9 @@ let roHP = 100;
 let wins = document.getElementById("wins")
 let losses = document.getElementById("losses")
 
+const winSound = new Audio('SOUNDFX/you-win-voice-sound-effect.mp3')
+const lossSound = new Audio('SOUNDFX/you-lose-sound-effect.mp3')
+const sadSound = new Audio('SOUNDFX/sad-meme-audio.mp3')
 
 //-------------------------------------FIGHTER 1 attack -------------------------------------moves//
 
@@ -125,6 +128,8 @@ function kick() {
       p.innerHTML = "you win!" + "\n" ;
    fighting.style.visibility = 'hidden';
    wins.innerHTML +=1;
+   winSound.play();
+   winSound.volume =0.3;
    
 } else{
     cpuAttack()
@@ -163,6 +168,8 @@ function punch() {
         p.innerHTML = " you win! " + "\n";
         fighting.style.visibility = 'hidden';
         wins.innerHTML +=1;
+        winSound.play();
+        winSound.volume =0.3;
      
     }else{
         cpuAttack()
@@ -202,6 +209,8 @@ function spMove() {
        p.innerHTML = " you win! " + "\n";
        fighting.style.visibility = 'hidden';
        wins.innerHTML +=1;
+       winSound.play();
+       winSound.volume =0.3;
     } else{
         cpuAttack()
         p.scrollTop = p.scrollHeight;
@@ -221,7 +230,7 @@ function cpuAttack() {
     let attack = Math.ceil(Math.random()*3);
     if (attack == 1){
         if( i==0 ){
-            characterImg.src="images/narutoKick.GIF"; 
+            characterImg.src="images/sasukeKick.GIF"; 
             i=1;
          }
     else if( i==1 ){
@@ -246,6 +255,10 @@ function cpuAttack() {
         p.innerHTML = " YOU LOSE! " + "\n";
         fighting.style.visibility = 'hidden';
         losses.innerHTML +=1;
+        lossSound.play();
+        lossSound.volume =0.3;
+        sadSound.play();
+        sadSound.volume =0.2;
         
     }
     }
@@ -279,7 +292,10 @@ if (attack == 2){
         p.innerHTML = " YOU LOSE! " + "\n";
         fighting.style.visibility = 'hidden';
         losses.innerHTML +=1;
-       
+        lossSound.play();
+        lossSound.volume =0.3;
+        sadSound.play();
+        sadSound.volume =0.2;
     }
 }
 
@@ -315,6 +331,10 @@ if (papHP == 0){
     p.innerHTML = " YOU LOSE! " + "\n";
     fighting.style.visibility = 'hidden';
     losses.innerHTML +=1;
+    lossSound.play();
+    lossSound.volume =0.3;
+    sadSound.play();
+    sadSound.volume =0.2;
 }
 }
 }
@@ -342,7 +362,20 @@ let backgroundImg = document.getElementById('topRow');
     }
 
 
-    localStorage.setItem('wins', 'losses');
+   
+//saving currentScore count to browsers local storage//
+const saveToLocalStorage = () => {
+localStorage.setItem('player_1',wins.innerHTML)
+}    
+    
+const storedWinsLoss = localStorage.getItem("player_1")
+
+if(storedWinsLoss){
+    player_1.innerHTML = storedWinsLoss
+}
+
+
+
 
 
           
